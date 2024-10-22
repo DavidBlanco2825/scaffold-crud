@@ -10,10 +10,11 @@ spring:
       enabled: true
       path: "/h2"
   profiles:
-    include: null
+    include: "local"
 aws:
+  region: "${AWS_REGION:us-east-1}"
   dynamodb:
-    endpoint: "http://localhost:8000"
+    endpoint: "${DYNAMODB_ENDPOINT:http://localhost:4566}"
 management:
   endpoints:
     web:
